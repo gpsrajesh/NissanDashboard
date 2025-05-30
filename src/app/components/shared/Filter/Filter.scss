@@ -1,0 +1,54 @@
+@use '../../../styles/styles.scss' as *;
+.filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+
+  &__dropdown {
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: -8px;
+    width: 207px;
+    height: 128px;
+    padding: 16px 24px;
+    list-style-type: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(black, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: 0px 1px 30px rgba(black, 0.2);
+
+    li {
+      font-weight: 300;
+    }
+
+    [data-selected='true'] {
+      font-weight: 700;
+    }
+  }
+}
+
+@media (width < $br-lg) {
+  .filter {
+    &__title {
+      display: none;
+    }
+    &__icon {
+      width: 18px;
+    }
+  }
+}
+@media (width < $br-sm) {
+  .filter {
+    &__dropdown {
+      left: 0;
+    }
+  }
+}

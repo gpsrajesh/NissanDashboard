@@ -1,0 +1,48 @@
+.layout {
+  background-color: #12121c;
+  color: white;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url('../assets/images/nissan_bg.webp');
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+
+  @media (width<576px) {
+    background-position: top;
+    background-color: #12121c;
+    background-size: auto;
+    background-position-x: center;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    min-height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: linear-gradient(
+      to bottom,
+      rgba(30, 36, 51, 0.3) 0%,
+      rgba(30, 36, 51, 0.9) 40%,
+      rgba(30, 36, 51, 1)
+    );
+
+    @media (width<576px) {
+      background: linear-gradient(
+        to bottom,
+        rgba(30, 36, 51, 0.88) 50%,
+        rgba(30, 36, 51, 1)
+      );
+    }
+  }
+  &__content {
+    flex-grow: 1;
+  }
+}

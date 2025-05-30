@@ -1,0 +1,89 @@
+@use '../../../styles/styles.scss' as *;
+
+.searchbar-desk {
+  border-radius: 23px;
+  background-color: #dde1e5;
+  color: #707070;
+  width: 100%;
+
+  &[data-open='true'] {
+    padding: 4px;
+    width: 120%;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+
+    .search-input {
+      flex-grow: 1;
+      min-width: 120px;
+      border: none;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    .mic {
+      width: 22px;
+      height: 22px;
+      display: none;
+    }
+    [data-open='true'] .mic {
+      display: block;
+    }
+  }
+
+  .accordion {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease-out;
+    &[data-open='true'] {
+      grid-template-rows: 1fr;
+    }
+    > * {
+      overflow: hidden;
+    }
+  }
+
+  .history {
+    position: relative;
+    z-index: 2;
+    list-style-type: none;
+    display: grid;
+    gap: 4px;
+    margin: 0;
+
+    & > * {
+      cursor: pointer;
+    }
+    & > *:first-child {
+      margin-top: 12px;
+    }
+    & > *:last-child {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.overlay-desk {
+  position: fixed !important;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: grid;
+  place-content: center;
+}

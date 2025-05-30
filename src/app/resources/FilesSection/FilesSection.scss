@@ -1,0 +1,132 @@
+@use '../../styles/styles.scss' as *;
+
+.files-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .categories {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      @include character-style-1;
+      list-style-type: none;
+      color: rgba(white, 0.5);
+      .selected {
+        color: rgba(white, 1);
+      }
+    }
+
+    .actions {
+      @include character-style-4;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-right: 32px;
+
+      &__view {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: rgba(white, 0.5);
+        .selected {
+          color: rgba(white, 1);
+        }
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+    border-radius: 32px;
+    background-color: rgba(white, 0.2);
+    backdrop-filter: blur(15px) brightness(1.5);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .titles {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 28px;
+
+      & > *:nth-child(2) {
+        text-align: end;
+      }
+    }
+
+    .container {
+      flex-grow: 1;
+      height: 1px;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+      }
+      &::-webkit-scrollbar-track {
+        background: rgba(white, 0);
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(black, 0.3);
+        border-radius: 8px;
+        border: 4px none #ededed2d;
+        &:hover {
+          background-color: rgba($accent-color, 0.2);
+        }
+      }
+      scrollbar-width: thin; // Mozilla scroll
+      scrollbar-color: rgba(black, 0.3) transparent; //Mozilla scroll
+
+      .file-list {
+        margin: 0;
+        padding-left: 0;
+        display: grid;
+        gap: 16px;
+
+        &__file {
+          list-style-type: none;
+          display: flex;
+          gap: 16px;
+          justify-content: space-between;
+          align-items: center;
+          margin-right: 16px;
+          &-name {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+          }
+          &-icon {
+            color: rgba(white, 0.4);
+            scale: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (width < $br-md) {
+  .files-section {
+    &__header {
+      .categories {
+        font-size: 16px;
+        gap: 32px;
+      }
+
+      .actions {
+        font-size: 14px;
+      }
+    }
+  }
+}

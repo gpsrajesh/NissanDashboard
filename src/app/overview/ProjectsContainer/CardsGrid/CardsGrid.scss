@@ -1,0 +1,30 @@
+@use '../../../styles/styles.scss' as *;
+
+.card-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none; //Mozilla
+
+  .no-results {
+    margin-top: 32px;
+    font-size: 24px;
+    font-weight: 200;
+    span {
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+}
+
+@media (width< $br-sm) {
+  .card-list {
+    flex-direction: column;
+    gap: 48px;
+  }
+}

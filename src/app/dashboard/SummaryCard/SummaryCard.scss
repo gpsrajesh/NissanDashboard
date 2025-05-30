@@ -1,0 +1,56 @@
+@use '../../styles/styles.scss' as *;
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-radius: 13px;
+  background-color: rgba(white, 0.1);
+  backdrop-filter: blur(10px);
+  gap: 16px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    &-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &-date {
+      font-size: 10px;
+    }
+  }
+  &__description {
+    margin: 0;
+  }
+  &__actions {
+    .title {
+      margin: 0;
+    }
+    .list {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+      &__item {
+        border-radius: 7px;
+        padding: 4px 8px;
+        background-color: rgba(white, 0.1);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+
+        &-name {
+          font-size: 10px;
+          flex-grow: 1;
+          text-align: left;
+        }
+      }
+    }
+  }
+}

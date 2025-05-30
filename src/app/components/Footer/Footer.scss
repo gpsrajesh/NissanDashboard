@@ -1,0 +1,39 @@
+@use '../../styles/styles.scss' as *;
+
+.footer {
+  margin: 16px 64px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__icon {
+    height: 64px;
+  }
+
+  &__message {
+    align-self: center;
+    margin-right: 64px;
+
+    @media (width < 992px) {
+      display: none;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+@media (width < $br-lg) {
+  .footer {
+    margin: 21px;
+    &__icon {
+      height: 48px;
+    }
+  }
+}

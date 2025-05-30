@@ -1,0 +1,30 @@
+@use '../../../styles/styles.scss' as *;
+.menu {
+  &__button {
+    color: white;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+@media (width< $br-lg) {
+  .menu {
+    &__button {
+      .title {
+        display: none;
+      }
+    }
+  }
+}
+
+.animation-in {
+  animation: slide-in-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.animation-out {
+  animation: slide-out-right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

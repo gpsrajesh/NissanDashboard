@@ -1,0 +1,52 @@
+@use '../styles/styles.scss' as *;
+
+.overview {
+  padding: 0 0 0 221px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.overview-skeleton {
+  padding: 32px 64px 0 221px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  opacity: 0.3;
+  flex-grow: 1;
+
+  @media (width < 1200px) {
+    padding: 32px 64px;
+  }
+  @media (width < 992px) {
+    padding: 16px 24px;
+  }
+
+  .header {
+    width: 50%;
+    flex: 1 0 200px;
+    background-color: white;
+    border-radius: 16px;
+  }
+  .content {
+    border-radius: 16px;
+    flex: 1 0 380px;
+    background-color: white;
+    height: 100%;
+    flex-grow: 1;
+  }
+}
+
+@media (width < $br-xl) {
+  .overview {
+    padding: 0 64px;
+  }
+}
+@media (width < $br-lg) {
+  .overview {
+    padding: 21px;
+    gap: 12px;
+  }
+}

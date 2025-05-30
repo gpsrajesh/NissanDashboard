@@ -1,0 +1,74 @@
+@use '../../../styles/styles.scss' as *;
+
+.notifications {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+
+  &__text {
+    font-size: 16px;
+    z-index: 4;
+    @media (width < $br-lg) {
+      display: none;
+    }
+  }
+  &__bell {
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 0;
+    z-index: 4;
+    position: relative;
+    :hover {
+      cursor: pointer;
+    }
+    &-icon {
+      height: 37px;
+    }
+
+    &-pill {
+      font-size: 14px;
+      border-radius: 50%;
+      right: -6px;
+      width: 23px;
+      height: 23px;
+      background-color: $accent-color;
+      position: absolute;
+      top: -5px;
+      display: grid;
+      place-content: center;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-animation: scale-in-center 0.5s
+        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+  }
+
+  &__list-container {
+    position: absolute;
+    z-index: 3;
+    top: -5px;
+    right: -15px;
+    padding: 32px 16px 32px;
+    min-width: 300px;
+    max-height: 65dvh;
+    height: 65dvh;
+    background-color: rgba(0, 0, 0, 0.503);
+    border-radius: 10px;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+
+  &__overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}

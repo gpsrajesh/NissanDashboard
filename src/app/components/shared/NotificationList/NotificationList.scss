@@ -1,0 +1,54 @@
+@use '../../../styles/styles.scss' as *;
+
+.notification-list {
+  list-style: none;
+  padding: 16px;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  border-radius: 10px;
+  display: grid;
+  gap: 16px;
+
+  &::after {
+    content: 'Feature comming soon';
+    padding: 24px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $accent-color;
+    border-radius: 10px;
+    z-index: 20;
+    animation: appearanimation 2.2s ease-out forwards;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none; //Mozilla
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    align-items: center;
+    gap: 8px;
+    &-icon {
+      color: $accent-color;
+    }
+    &-date {
+      align-self: end;
+      font-size: 12px;
+    }
+  }
+}
+
+@keyframes appearanimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

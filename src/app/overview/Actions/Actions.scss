@@ -1,0 +1,79 @@
+@use '../../styles/styles.scss' as *;
+
+.actions {
+  margin: 16px 64px 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  .categories {
+    @include character-style-1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    gap: 32px;
+    color: rgba(white, 0.5);
+    .selected {
+      color: rgba(white, 1);
+    }
+  }
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__view {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: rgba(white, 0.5);
+      .selected {
+        color: rgba(white, 1);
+      }
+    }
+  }
+}
+
+@media (width < $br-xl) {
+  .actions {
+    margin: 16px 0;
+    .categories {
+      justify-content: space-between;
+      font-size: 24px;
+      line-height: 22px;
+    }
+    .filters {
+      font-size: 14px;
+    }
+  }
+}
+@media (width < $br-lg) {
+  .actions {
+    margin: 8px 0 0 0;
+    .categories {
+      justify-content: space-between;
+      font-size: 16px;
+      line-height: 22px;
+      gap: 24px;
+    }
+    .filters {
+      font-size: 14px;
+      gap: 24px;
+
+      &__view {
+        gap: 12px;
+        .title {
+          display: none;
+        }
+        .icon {
+          width: 18px;
+        }
+      }
+    }
+  }
+}

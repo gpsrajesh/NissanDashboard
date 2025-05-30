@@ -1,0 +1,14 @@
+.test-page {
+  padding: 64px 256px;
+  .square {
+    height: 250px;
+    width: 250px;
+    background: yellowgreen;
+  }
+
+  .container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(430px, 100%), 1fr));
+  }
+}
